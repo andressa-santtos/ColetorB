@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { Text, View, Image, TextInput,TouchableOpacity } from 'react-native'
 import * as animatable from 'react-native-animatable'
 import { Ionicons } from '@expo/vector-icons'
-
 import fonts from '../../assets/fonts/Roboto/fonts'
 import colors from '../../services/colors'
 import { ButtonSmall } from '../../components/Default'
@@ -12,6 +11,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 function RecuperarSenha({ navigation }:NativeStackScreenProps<any,any>){
     const [inputPassword, setInputPassword] = useState('');
     const [hideIconPass, setHideIconPass] = useState(true);
+    const [inputEmail, setInputEmail] = useState('');
     return (
         <View style={styles.container}>
             <View style={styles.containerHeader}>
@@ -26,6 +26,12 @@ function RecuperarSenha({ navigation }:NativeStackScreenProps<any,any>){
                 <View style={styles.form}>
                     <Text style={styles.label}>E-mail Novo</Text>
                     <TextInput
+                        keyboardType="email-address"
+                        textContentType="emailAddress"
+                        autoCapitalize="none"
+                        value={inputEmail}
+                        autoCorrect={false}
+                        onChangeText={(texto) => {setInputEmail(texto)}}
                         placeholder='Digite um Novo Email...'
                         style={styles.Input}
                     />
@@ -33,6 +39,9 @@ function RecuperarSenha({ navigation }:NativeStackScreenProps<any,any>){
                     <Text style={styles.label}>Senha Nova</Text>
                     <View style={styles.Area}>
                         <TextInput
+                            textContentType="password"
+                            autoCapitalize="none"
+                            autoCorrect={false}
                             placeholder='Digite uma Nova Senha...'
                             style={styles.Input}
                             value={inputPassword}

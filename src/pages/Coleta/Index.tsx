@@ -10,7 +10,6 @@ import { RadioButton  } from 'react-native-paper'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
 function Coleta({ navigation }:NativeStackScreenProps<any,any>){
-    const [value, setValue] = useState('boa');
     
     return (
         <View style={styles.container}>
@@ -26,23 +25,11 @@ function Coleta({ navigation }:NativeStackScreenProps<any,any>){
                 
                 <Text style={styles.boxTextCenter}>Selecione o material que deseja descartar</Text>
                 <ScrollView style={styles.form}>
-                    
-
-                    <View>
-                        <RadioButton.Group onValueChange={novoValor => setValue(novoValor)} value={value}>
-                            {/*  arrumar aqui  */}
-                            <Radio/>
-                            <Radio/>
-                            <Radio/>
-                            <Radio/>
-                            <Radio/>
-                            <Radio/>
-                        </RadioButton.Group>
-                    </View>
+                    <Radio/>
                 </ScrollView>
 
                 <ButtonSmall
-                    onPress={() => {navigation.goBack()}}
+                    onPress={() => {navigation.navigate('SelecionarColetor')}}
                     text='Salvar'
                     textColor={colors.Primary.White}
                     textFont={fonts.Roboto.r400}

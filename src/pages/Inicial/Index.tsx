@@ -4,7 +4,7 @@ import * as animatable from 'react-native-animatable'
 
 import fonts from '../../assets/fonts/Roboto/fonts'
 import colors from '../../services/colors'
-import { ButtonMediun } from "../../components/Default"
+import { ButtonMediun, ButtonLink } from "../../components/Default"
 import { styles } from "../../components/css"
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
@@ -35,12 +35,19 @@ function Inicial({ navigation }:NativeStackScreenProps<any,any>){
                     Clique em Acessar para Começar.
                 </Text>
                 <ButtonMediun
-                    onPress={() => {navigation.navigate('Login')}}
+                    onPress={() => {navigation.navigate('TipoLogin')}}
                     text='Acessar'
                     textColor={colors.Primary.White}
                     textFont={fonts.Roboto.r400}
                     color={colors.Primary.Green.basic}
                     hover={colors.Primary.Green.hover}
+                />
+                
+                <ButtonLink
+                    text='Deseja Criar uma Conta?'
+                    onPress={() => {navigation.navigate('TipoCadastro')}}
+                    textColor={colors.Primary.Black}
+                    textFont={fonts.Roboto.r300}
                 />
             </animatable.View>
         </View>

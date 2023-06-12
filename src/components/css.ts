@@ -1,3 +1,4 @@
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 import fonts from '../assets/fonts/Roboto/fonts'
 import colors from '../services/colors'
 import {StyleSheet} from 'react-native'
@@ -19,6 +20,15 @@ export const styles = StyleSheet.create({
         fontSize:16,
         fontFamily: fonts.Roboto.r400,
     },
+    subTituloCenter: {
+        textAlign:'center',
+        fontSize:18,
+        fontFamily: fonts.Roboto.r400,
+    },
+    categoryText: {
+        fontSize:18,
+        fontFamily: fonts.Roboto.r500,
+    },
     boxText: {
         fontSize:16,
         marginTop:20,
@@ -26,7 +36,8 @@ export const styles = StyleSheet.create({
     },
     boxTextCenter: {
         fontSize:16,
-        marginTop:50,
+        textAlign:'center',
+        marginTop:40,
         fontFamily: fonts.Roboto.r400,
     },
     iconTitulo: {
@@ -83,12 +94,53 @@ export const styles = StyleSheet.create({
     Area:{
         flexDirection:'row',
         alignItems:"center",
+        justifyContent:"space-around",
+    },
+    containerIcon:{
+        flexDirection:'row',
+        alignItems:"center",
+        position: "relative",
+        left:"42%",
+        bottom:0,
     },
     selectedRadio:{
         flexDirection:'row',
         alignItems:"center",
         justifyContent:"space-around",
-        margin:10,
+        marginVertical: 10,
+        marginBottom:10,
+    },
+    border:{
+        borderColor: colors.Primary.Black,
+        borderWidth: 1,
+        alignItems:"center",
+        justifyContent:"center",
+        borderRadius:50,
+    },
+    styleTitle:{
+        fontSize:24,
+        letterSpacing:1.5,
+        color: colors.Primary.Black,
+        fontFamily: fonts.Roboto.r400,
+        position: "relative",
+        left:"28%",
+        bottom:0,
+        top:17,
+        maxWidth:"70%",
+        whiteSpace: "pre-line",
+    },
+     styleLeft:{
+        alignItems:"center",
+        position: "relative",
+        left:40,
+        bottom:0,
+        top:"50%",
+    },
+    containerSelection:{
+        marginBottom:30,
+        borderColor: colors.Primary.Black,
+        borderWidth: 1,
+        backgroundColor: colors.Primary.White,
     },
     form:{
         width:"90%",
@@ -124,6 +176,7 @@ export const styles = StyleSheet.create({
         borderTopStartRadius:30,
         borderTopEndRadius:30,
         alignItems:"center",
+        whiteSpace: "pre-line",
         backgroundColor: colors.Primary.White,
     },   
     containerHeader:{
@@ -148,6 +201,23 @@ export const styles = StyleSheet.create({
         width:"100%",// aqui
         height:"100%",
     },
+    imgContainer:{ 
+        alignItems: 'center',
+    },
+
+    image:{
+        width: 110,
+        height: 110,
+        borderRadius: 110,
+        borderColor: colors.Primary.Black,
+        borderWidth: 2,
+    },
+    profileContainer:{
+        flex: 0.7,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
     teste:{
         width:120,// testando que da para colocar imagens no marcadores
         height:120,
