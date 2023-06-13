@@ -151,6 +151,7 @@ export default function CadastrarColetor() {
                     resizeMode='contain'
                 />
             </View>
+            <
 
             <animatable.View animation="fadeInUp" style={styles.containerForm}>
                 <ScrollView style={styles.form}>
